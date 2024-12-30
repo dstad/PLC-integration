@@ -1,3 +1,8 @@
+//This code exectutes the same result as fsr_communication.ino, however the signal is sent over a bluetooth communication protocol, instead of serial, allowing this communication interface to be wireless//
+
+
+
+//calling in libraries used for bluetooth communication//
 #include <SPI.h>
 #include "Adafruit_BLE_UART.h"
 
@@ -8,6 +13,7 @@
 Adafruit_BLE_UART BTLEserial = Adafruit_BLE_UART(ADAFRUITBLE_REQ, ADAFRUITBLE_RDY, ADAFRUITBLE_RST);
 aci_evt_opcode_t laststatus = ACI_EVT_DISCONNECTED;
 
+//defining variables//
 int FsrPin = 0;
 int ledPin1 = 15;
 int ledPin2 = 16;
