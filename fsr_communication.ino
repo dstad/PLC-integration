@@ -1,5 +1,8 @@
+//The purpose of this code is to program a force sensistive resistor (FSR) to light up a series of LEDs in succession, as more force is applied to the resistor//
+//This communication protocol was done over serial initially.  The signal from the fsr is sent to an arduino micro controller, which interprets the fsr signal, and varies its output depending on the signal//
+
 int FsrPin = 0;
-int ledPin1 = 15;
+int ledPin1 = 15;        //defining the LED and FSR variables//
 int ledPin2 = 16;
 int ledPin3 = 17;
 int ledPin4 = 18;
@@ -33,7 +36,7 @@ void loop()
   //Serial.print("Analog reading = ");
   if (writeCount == 5000)
   {
-    Serial.print(FsrReading);
+    Serial.print(FsrReading);        //intialization of fsr reading//
     writeCount = 0;
   }
   else
@@ -63,7 +66,7 @@ void loop()
         //digitalWrite(13, LOW);
         
     
-    if (readSuccess == 1)
+    if (readSuccess == 1)      //The following if statement lights the LEDS in 4 different cases, depending on the force applied to the fsr//
     {
       /*digitalWrite(13, HIGH);
       delay(1000);
